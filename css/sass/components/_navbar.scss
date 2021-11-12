@@ -1,0 +1,140 @@
+nav {
+    background-color: $sec;
+}
+
+.navbar-list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+
+    @include md {
+        justify-content: space-between;
+    }
+
+    >li {
+        ~li {
+            @include rtl {
+                margin-right: 23px;
+            }
+
+            @include ltr {
+                margin-left: 23px;
+            }
+
+            @include md {
+                @include rtl {
+                    margin-right: 0;
+                }
+
+                @include ltr {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        &.has-sub {
+            position: relative;
+        }
+
+        &:hover {
+            >a {
+                color: $hover;
+            }
+
+            >.sub-cat {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        >a {
+            font-size: 16px;
+            color: #fff;
+            display: block;
+            line-height: 48px;
+            transition: all 0.3s ease-in-out;
+
+            i {
+                font-size: 12px;
+                display: none;
+            }
+        }
+    }
+}
+
+.sub-cat {
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+    padding: 22px 0;
+    width: 194px;
+    z-index: 9;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+
+    li {
+        margin-bottom: 12px;
+        position: relative;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            >a {
+                color: $main;
+            }
+
+            >.sub-cat {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    a {
+        font-size: 16px;
+        padding: 0 21px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $text;
+        transition: all 0.3s ease-in-out;
+
+        i {
+            font-size: 8px;
+        }
+    }
+
+    &.level-2 {
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        @media (max-width: 1300px) {
+            transform: none;
+
+            @include rtl {
+                left: auto;
+                right: 0;
+            }
+
+            @include ltr {
+                left: 0;
+            }
+        }
+    }
+
+    &.level-3 {
+        top: -22px;
+
+        @include rtl {
+            right: 100%;
+        }
+
+        @include ltr {
+            left: 100%;
+        }
+    }
+}

@@ -1,0 +1,212 @@
+.search-select {
+    position: absolute;
+    width: 180px;
+    bottom: 2px;
+    top: 2px;
+
+    @include rtl {
+        right: 2px;
+    }
+
+    @include ltr {
+        left: 2px;
+    }
+}
+
+.select2-container {
+    &.select2-container--default {
+        position: absolute;
+        bottom: 2px;
+        top: 2px;
+
+        @include rtl {
+            right: 2px;
+        }
+
+        @include ltr {
+            left: 2px;
+        }
+
+        .select2-selection--single {
+            border: none;
+            height: 100%;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: transparent;
+
+            @include rtl {
+                padding-right: 23px;
+                padding-left: 18px;
+            }
+
+            @include ltr {
+                padding-right: 18px;
+                padding-left: 23px;
+            }
+
+            .select2-selection__rendered {
+                color: #808080;
+                font-size: 15px;
+
+                @include rtl {
+                    padding: 0;
+                }
+
+                @include ltr {
+                    padding: 0;
+                }
+            }
+
+            .select2-selection__arrow {
+                font-family: 'Linearicons-Free';
+                height: auto;
+                width: auto;
+                position: relative;
+                top: auto;
+                bottom: auto;
+                font-size: 8px;
+                color: #808080;
+
+                @include rtl {
+                    left: auto;
+                    right: auto;
+                }
+
+                @include ltr {
+                    left: auto;
+                    right: auto;
+                }
+
+                b {
+                    display: none;
+                }
+
+                &:before {
+                    content: "\e874";
+                }
+            }
+        }
+
+        .select2-dropdown {
+            border: 2px solid #f2f2f2;
+            background-color: #ffffff;
+            width: 230px !important;
+
+            @include rtl {
+                left: -50px;
+            }
+
+            @include ltr {
+                right: -50px;
+            }
+
+            .select2-results {
+                >.select2-results__options {
+                    max-height: 406px;
+                    padding: 17px 0 0;
+
+                    &::-webkit-scrollbar {
+                        background-color: #f2f2f2;
+                        width: 6px;
+                        height: 0px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: $main;
+
+                    }
+
+                    scrollbar-width: thin;
+                    scrollbar-color: $main #f2f2f2;
+                }
+            }
+        }
+
+        .select2-results__option {
+            padding: 0 19px;
+            margin-bottom: 14px;
+            color: #808080;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+
+            &.select2-results__option--selected {
+                background-color: transparent;
+                color: $main;
+            }
+
+            &.select2-results__option--highlighted {
+                background-color: transparent;
+                color: $main;
+            }
+        }
+    }
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: "";
+        width: 2px;
+        height: 36px;
+        background-color: #f2f2f2;
+
+        @include rtl {
+            right: 100%;
+        }
+
+        @include ltr {
+            left: 100%
+        }
+    }
+}
+
+.select-cont {
+    @include xs {
+        position: relative;
+        margin-bottom: 5px;
+
+        .search-select {
+            position: relative;
+            width: 100%;
+            bottom: auto;
+            top: auto;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            @include rtl {
+                right: auto;
+            }
+
+            @include ltr {
+                left: auto;
+            }
+
+            height: 50px;
+            border: 2px solid #f2f2f2;
+            border-radius: var(--radius);
+            padding: 0 23px;
+            color: #808080;
+            font-size: 15px;
+        }
+
+        &::after {
+            font-family: 'Linearicons-Free';
+            content: "\e874";
+            font-size: 12px;
+            color: #808080;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include rtl {
+                left: 18px;
+            }
+
+            @include ltr {
+                right: 18px;
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.banner {
+    position: relative;
+    display: block;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &::before {
+        content: '';
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        border: 70px solid rgba(255, 255, 255, 0);
+        top: 0;
+        right: 0;
+        transition: all 0.5s ease-in-out;
+        z-index: 2;
+    }
+
+    &:hover {
+        &::before {
+            border: 0 solid rgba(255, 255, 255, 0.7);
+        }
+
+        img {
+            transform: scale(1.05);
+        }
+    }
+}

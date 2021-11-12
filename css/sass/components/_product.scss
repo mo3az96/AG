@@ -1,0 +1,131 @@
+.product {
+    background-color: #fff;
+    border: 2px solid #edf0f2;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+
+    .product-img {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            transition: all 0.3s ease-in-out;
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    .product-info {
+        padding: 9px 10px;
+    }
+
+    .product-name {
+        font-size: 14px;
+        line-height: 1.429;
+        text-align: center;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        height: 40px;
+        margin: 0 0 7px;
+
+        a {
+            color: $text;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $main;
+            }
+        }
+    }
+
+    .product-prices {
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 11px;
+        height: 44px;
+    }
+
+    .price-current {
+        font-size: 15px;
+        color: $main;
+    }
+
+    .price-old {
+        display: block;
+        font-weight: 500;
+        color: #acacac;
+        margin-top: 2px;
+    }
+
+    .product-addToCart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 34px;
+        font-size: 14px;
+        color: #fff;
+        font-weight: 700;
+        background-color: $sec;
+        border-radius: var(--radius);
+        transition: all 0.3s ease-in-out;
+
+        i {
+            font-size: 16px;
+            color: #fff;
+            backface-visibility: hidden;
+            transition: all 0.3s ease-in-out;
+
+            @include rtl {
+                margin-left: 6px;
+            }
+
+            @include ltr {
+                margin-right: 6px;
+            }
+        }
+
+        &:hover {
+            background-color: $main;
+
+            i {
+                transform: rotate(-5deg);
+            }
+        }
+    }
+
+    .product-hint {
+        position: absolute;
+        top: 4px;
+        white-space: nowrap;
+        padding: 2.5px 10px;
+        height: 22px;
+        line-height: 22px;
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 500;
+
+        &.price-hint {
+            right: 4px;
+            color: #ef0039;
+            background-color: #fcccd7;
+        }
+
+        &.label-hint {
+            left: 4px;
+            color: #189a0e;
+            background-color: #d1ebcf;
+        }
+    }
+}
